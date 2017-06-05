@@ -1,19 +1,64 @@
-// Given a credit card number, this function should return a string with the 
-// name of a network, like 'MasterCard' or 'American Express'
-// Example: detectNetwork('343456789012345') should return 'American Express'
-
-// How can you tell one card network from another? Easy! 
-// There are two indicators:
-//   1. The first few numbers (called the prefix)
-//   2. The number of digits in the number (called the length)
+var cards = [
+    {
+            card : 'The Diner Club',
+            prefix : ['34','39'],
+            length: [14]
+        },
+    {
+            card : 'American Express',
+            prefix : ['34','37'],
+            length: [15]
+        },
+    {
+            card : 'Visa',
+            prefix : ['4'],
+            length: [13, 16, 19]
+        },
+    {
+            card : 'Mastercard',
+            prefix : ['54','55'],
+            length: [16]
+        },
+    {
+            card : 'Discover',
+            prefix : ['6011'],
+            length: [16,19]
+        },
+    {
+            card : 'Maestro',
+            prefix : ['50','56','57','58'],
+            length: [12,13,14,15,16,17,18,19]
+        },
+    {
+            card : 'China Union Pay',
+            prefix : ['62'],
+            length: [16,17,18,19]
+        },
+    {
+            card : 'Switch',
+            prefix : ['4903','4905','4911','4936'],
+            length: [16,18,19]
+        }
+]
 
 var detectNetwork = function(cardNumber) {
-  // Note: `cardNumber` will always be a string
-  // The Diner's Club network always starts with a 38 or 39 and is 14 digits long
-  // The American Express network always starts with a 34 or 37 and is 15 digits long
-  //hello
-
-  // Once you've read this, go ahead and try to implement this function, then return to the console.
+  var result = 'Network not found';
+  for(var i=0; i<cards.length; i++) {
+    for(var x=0; x<cards[i].length.length; x++) {
+      if(cardNumber.length === cards[i].length[x]) {
+        for(var y=0; y<cards[i].prefix.length; y++) {
+          if (cardNumber.slice(0,4) === cards[i].prefix[y]) {
+            result = cards[i].card;
+          }
+          else if (cardNumber.slice(0,2)=== cards[i].prefix[y]) {
+            result = cards[i].card;
+          }
+          else if (cardNumber[0]=== cards[i].prefix[y]) {
+            result = cards[i].card;
+          }
+        }
+      }
+    }
+  }
+  return result;
 };
-
-

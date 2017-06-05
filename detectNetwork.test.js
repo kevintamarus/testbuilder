@@ -148,7 +148,10 @@ describe('Discover', function() {
 
 describe('Maestro', function() {
   // Write full test coverage for the Maestro card
+  // prefix 50, 56-58, 6...length is 12-19
 });
 
 describe('should support China UnionPay')
+  //prefix 62...length 16-19
 describe('should support Switch')
+  //prefix: 4903, 4905, 4911, 4936 ... length 16, 18, 19
