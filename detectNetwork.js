@@ -7,7 +7,7 @@ var cards = [
     {
             card : 'American Express',
             prefix : ['34','37'],
-            length: [15]
+            length: [15]``
         },
     {
             card : 'Visa',
@@ -16,7 +16,7 @@ var cards = [
         },
     {
             card : 'Mastercard',
-            prefix : ['54','55'],
+            prefix : ['51','52','53','54','55'],
             length: [16]
         },
     {
@@ -30,7 +30,7 @@ var cards = [
             length: [12,13,14,15,16,17,18,19]
         },
     {
-            card : 'China Union Pay',
+            card : 'China UnionPay',
             prefix : ['62'],
             length: [16,17,18,19]
         },
