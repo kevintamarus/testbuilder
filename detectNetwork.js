@@ -7,7 +7,7 @@ var cards = [
     {
             card : 'American Express',
             prefix : ['34','37'],
-            length: [15]``
+            length: [15]
         },
     {
             card : 'Visa',
