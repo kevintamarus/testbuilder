@@ -84,7 +84,7 @@ describe('Visa', function() {
   // Chai provides an assert that acts the same as our previous assert.
   // Search the documentation to figure out how to access it. 
   //   http://chaijs.com/
-  var assert = chai.FILL_ME_IN;
+  var assert = chai.assert; //this might need to be changed
  
 
   it('has a prefix of 4 and a length of 13', function() {
@@ -140,8 +140,10 @@ describe('MasterCard', function() {
 });
 
 describe('Discover', function() {
+  var should = chai.should();
   // Tests without a function will be marked as "pending" and not run
   // Implement these tests (and others) and make them pass!
+
   it('has a prefix of 6011 and a length of 16', function() {
     detectNetwork('6011234567891234').should.equal('Discover');
   });
@@ -151,7 +153,27 @@ describe('Discover', function() {
 });
 
 describe('Maestro', function() {
+  var should = chai.should();
+
   it('has a prefix of 50 and a length of 12', function() {
+    detectNetwork('500012345678').should.equal('Maestro');
+  })
+  it('has a prefix of 50 and a length of 19', function() {
+    detectNetwork('500012345678').should.equal('Maestro');
+  })
+  it('has a prefix of 56 and a length of 12', function() {
+    detectNetwork('500012345678').should.equal('Maestro');
+  })
+  it('has a prefix of 56 and a length of 19', function() {
+    detectNetwork('500012345678').should.equal('Maestro');
+  })
+  it('has a prefix of 57 and a length of 12', function() {
+    detectNetwork('500012345678').should.equal('Maestro');
+  })
+  it('has a prefix of 57 and a length of 19', function() {
+    detectNetwork('500012345678').should.equal('Maestro');
+  })
+  it('has a prefix of 58 and a length of 12', function() {
     detectNetwork('500012345678').should.equal('Maestro');
   })
   it('has a prefix of 58 and a length of 19', function() {
@@ -160,7 +182,9 @@ describe('Maestro', function() {
 });
 
 describe('should support China UnionPay', function() {
+  var should = chai.should();
   //prefix 62...length 16-19
+
   it('has a prefix of 62 and a length of 16', function() {
     detectNetwork('6200123456789012').should.equal('China UnionPay');
   })
@@ -170,7 +194,9 @@ describe('should support China UnionPay', function() {
 });
 
 describe('should support Switch', function() {
+  var should = chai.should();
   //prefix: 4903, 4905, 4911, 4936 ... length 16, 18, 19
+  
   it('has a prefix of 4903 and a length of 16', function() {
     detectNetwork('4903123456789012').should.equal('Switch');
   })
