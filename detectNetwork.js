@@ -1,7 +1,8 @@
-var cards = [
+var detectNetwork = function(cardNumber) {
+  var cards = [
     {
             card : 'The Diner Club',
-            prefix : ['34','39'],
+            prefix : ['38','39'],
             length: [14]
         },
     {
@@ -21,27 +22,25 @@ var cards = [
         },
     {
             card : 'Discover',
-            prefix : ['6011'],
+            prefix : ['6011', '644', '645', '646', '647', '648', '649'],
             length: [16,19]
         },
     {
             card : 'Maestro',
-            prefix : ['50','56','57','58'],
+            prefix : ['5018','5020','5038','6384'],
             length: [12,13,14,15,16,17,18,19]
         },
     {
             card : 'China UnionPay',
-            prefix : ['62'],
+            prefix : ['622126','622926','624','625','626','6282','6288'],
             length: [16,17,18,19]
         },
     {
             card : 'Switch',
-            prefix : ['4903','4905','4911','4936'],
+            prefix : ['4903','4905','4911','4936','564182','633110','6333','6759'],
             length: [16,18,19]
         }
-]
-
-var detectNetwork = function(cardNumber) {
+  ];
   var result = 'Network not found';
   for(var i=0; i<cards.length; i++) {
     for(var x=0; x<cards[i].length.length; x++) {
