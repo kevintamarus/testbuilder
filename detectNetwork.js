@@ -41,10 +41,12 @@ var detectNetwork = function(cardNumber) {
             length: [16,18,19]
         }
   ];
+  //first for-loop adds the remaining prefixes to the China UnionPay prefix array(too long to manually list)
   for(var i = 622126; i < 622926; i++) {
     cards[6].prefix.push(`${i}`);
   }
   var result = 'Network not found';
+  //used 3 for-loops(looping through the cards array, then through length of each card, and finally the prefix of each card)
   for(var i=0; i<cards.length; i++) {
     for(var x=0; x<cards[i].length.length; x++) {
       if(cardNumber.length === cards[i].length[x]) {
